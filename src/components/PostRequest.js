@@ -13,7 +13,7 @@ function PostRequest() {
 
   const { mutate, isLoading, isError, error, data } = usePostData({
     onSuccess: (data) => {
-      client.invalidateQueries({ queryKey: ["all-datas"] }); // bu narsa post request qilganda get qilib olgan datani aftomatik abnovit qiladi va .map qilayotganimizga yana yangi datani olish uchun ozimiz zapros yuborishimizni hojati yo'q. aynan qaysi datani aftomatik abnovit qilish kerakligini queryKey orqali aniqlaymiz.
+      client.invalidateQueries({ queryKey: ["all-datas"]}); // bu narsa post request qilganda get qilib olgan datani aftomatik abnovit qiladi va .map qilayotganimizga yana yangi datani olish uchun ozimiz zapros yuborishimizni hojati yo'q. aynan qaysi datani aftomatik abnovit qilish kerakligini queryKey orqali aniqlaymiz.
       console.log("Data received:", data);
     },
     onError: (error) => {
